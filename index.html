@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Search for a city..." 
+                        class="search-input"
+                    >
+                    <button class="search-btn" onclick="handleSearch()">🔍</button>
+                </div>
+                <div class="header-info">
+                    <span class="date-time" id="dateTime">--/--/----</span>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message"></div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner"></div>
+
+            <!-- Weather Card -->
+            <div id="weatherCard" class="weather-card">
+                <div class="weather-main">
+                    <div class="city-info">
+                        <h2 class="city-name" id="cityName">Select a city</h2>
+                        <p class="weather-desc" id="weatherDescription">--</p>
+                    </div>
+                    <div class="temp-display">
+                        <span class="weather-emoji" id="weatherEmoji">🌤️</span>
+                        <span class="temperature" id="temperature">--°</span>
+                    </div>
+                </div>
+
+                <!-- Hourly Forecast -->
+                <div class="hourly-section">
+                    <h3>⏰ Hourly Forecast</h3>
+                    <div class="hourly-grid" id="hourlyForecast"></div>
+                </div>
+
+                <!-- Details Grid -->
+                <div class="details-section">
+                    <div class="detail-box">
+                        <label>Feels Like</label>
+                        <span class="detail-value" id="feelsLike">--°</span>
+                    </div>
+                    <div class="detail-box">
+                        <label>Humidity</label>
+                        <span class="detail-value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-box">
+                        <label>Wind Speed</label>
+                        <span class="detail-value" id="windSpeed">--</span>
+                    </div>
+                    <div class="detail-box">
+                        <label>Pressure</label>
+                        <span class="detail-value" id="pressure">--</span>
+                    </div>
+                </div>
+
+                <!-- Weekly Forecast -->
+                <div class="weekly-section">
+                    <h3>📅 7-Day Forecast</h3>
+                    <div class="weekly-grid" id="weeklyForecast"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
